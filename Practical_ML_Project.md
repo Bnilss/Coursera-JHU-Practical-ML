@@ -112,7 +112,7 @@ Correlation Matrix of Columns in the Training Data set.
 ```{r warning=FALSE, error=FALSE}
 corrplot(cor(training[, -length(names(training))]), method = "color", tl.cex = 0.5)
 ```  
-
+![](https://github.com/Bnilss/Practical-ML/blob/master/figures/unnamed-chunk-9-1.png)
 ## Partitioning Training Set  
 we split the cleaned training set into a training data set (70%) and a validation data set (30%). We will use the validation data set to conduct cross validation in future steps.  
 ```{r warning=FALSE, error=FALSE}
@@ -135,7 +135,7 @@ We fit a predictive model for activity recognition using <b>Decision Tree</b> al
 modelTree <- rpart(classe ~ ., data = training, method = "class")
 prp(modelTree)
 ```  
-
+![](https://github.com/Bnilss/Practical-ML/blob/master/figures/unnamed-chunk-11-1.png)
 Now, we estimate the performance of the model on the <b>validation</b> data set.  
 ```{r warning=FALSE, error=FALSE}
 predictTree <- predict(modelTree, validation, type = "class")
